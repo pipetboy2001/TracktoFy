@@ -1,0 +1,41 @@
+
+$color-primario: #1ed760;
+$color-texto: #ffffff;
+$radio-bordes: 5px;
+
+.login {
+  &__contenedor {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__logo-spotify {
+    width: 30vh;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  &__texto-spotify-review {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: $color-texto;
+  }
+
+  &__boton-inicio-spotify {
+    background-color: $color-primario;
+    border-radius: $radio-bordes;
+    color: $color-texto;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(120%);
+    }
+  }
+}
