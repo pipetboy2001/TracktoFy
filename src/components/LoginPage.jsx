@@ -2,8 +2,10 @@ import { useEffect} from "react";
 import spotifyLogo from "../assets/spotify-logo.svg";
 
 const Login = () => {
-  const CLIENT_ID = "77f10df7f21e404faf5991c4b9e4be2c";
-  const REDIRECT_URI = "http://localhost:5173/dashboard";
+  const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
+  const REDIRECT_URI = import.meta.env.MODE === 'production'
+  ? import.meta.env.VITE_PROD_URL
+  : import.meta.env.VITE_LOCAL_URL;
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SCOPES = [
