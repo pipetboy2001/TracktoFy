@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import AuthenticationStatus from "./components/ObtenerAuntenticacion";
 import "./style/index.scss";
+import AuthenticationStatus from "./components/ObtenerAuntenticacion";
 import Dashboard from "./components/DashboardPage";
 import Perfil from "./components/ProfilePage";
+import TopArtista from "./components/TopArtista";
 
 function App() {
   const [token, setToken] = useState("");
@@ -36,6 +37,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/perfil" element={<Perfil />} />
+        <Route path="/top-artists" element={<TopArtista />} />
       </Routes>
     </Router>
   );
