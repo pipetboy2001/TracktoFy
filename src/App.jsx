@@ -38,6 +38,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/top-artists" element={<TopArtista />} />
+
+        <Route path="/*" element={<Dashboard />} />
       </Routes>
     </Router>
   );
