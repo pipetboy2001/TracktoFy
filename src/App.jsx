@@ -40,6 +40,8 @@ function App() {
         <Route path="/top-artists" element={<TopArtista />} />
 
         <Route path="/*" element={<Dashboard />} />
+        <Route path="/:temaId" element={<Dashboard />}/>
+        <Route path="*" element={<Dashboard />} />
       </Routes>
     </Router>
   );
