@@ -12,17 +12,32 @@
   }
   
   .dashboard-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  padding: 2rem;
-  text-align: center;
-  cursor: pointer;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-texto;
+    border: 1px solid #ccc;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 0.5rem;
+  }
+  .dashboard-item:hover {
+    background-color: darken($color-texto, 10%); // oscurecer 10%
+    cursor: pointer;
+  }
+  .dashboard-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: $color-fondo
+  }
   .dashboard-icon {
-    margin-right: 0.5rem; /* Agrega espacio entre el icono y el texto */
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }.dashboard-text {
+    font-size: 0.9rem;
   }
   
   /* pantallas pequeñas (hasta 767px) */

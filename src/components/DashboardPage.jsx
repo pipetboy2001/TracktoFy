@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { FaUser, FaMusic, FaListUl,FaHistory, FaPlus } from "react-icons/fa";
+import { FaUser, FaMusic, FaListUl, FaHistory, FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import Login from "./LoginPage";
-import HeaderNav from "./HeaderNav";
 
 const Dashboard = () => {
   const [token, setToken] = useState("");
@@ -43,44 +42,55 @@ const Dashboard = () => {
 
   return (
     <>
-      {!token ? (
-        //Si no hay token, se muestra el boton de login
-        <Login />
-      ) : (
-        <HeaderNav />
-      )}
-
       {/* Si hay token, se muestran 6 opciones*/}
-
       {userData && (
         <div className="dashboard-container">
-        <div className="dashboard-grid">
-          <div className="dashboard-item">
-            <FaUser className="dashboard-icon" />
-             Perfil
-          </div>
-          <div className="dashboard-item">
-            <FaListUl className="dashboard-icon" />
-             Playlist
-          </div>
-          <div className="dashboard-item">
-            <FaMusic className="dashboard-icon" />
-             Tu Top Artistas
-          </div>
-          <div className="dashboard-item">
-            <FaMusic className="dashboard-icon" />
-             Tu Top Canciones
-          </div>
-          <div className="dashboard-item">
-            <FaHistory className="dashboard-icon" />
-             Recien escuchadas
-          </div>
-          <div className="dashboard-item">
-            <FaPlus className="dashboard-icon" />
-            Crear Playlist personalizada
+          <div className="dashboard-grid">
+            <Link to="/perfil" className="dashboard-item">
+              <div className="dashboard-link">
+                <FaUser className="dashboard-icon" />
+                <span className="dashboard-text">Perfil</span>
+              </div>
+            </Link>
+
+            <Link to="/playlist" className="dashboard-item">
+              <div className="dashboard-link">
+                <FaListUl className="dashboard-icon" />
+                <span className="dashboard-text">Playlist</span>
+              </div>
+            </Link>
+
+            <Link to="/top-artists" className="dashboard-item">
+              <div className="dashboard-link">
+                <FaMusic className="dashboard-icon" />
+                <span className="dashboard-text">Top Artistas</span>
+              </div>
+            </Link>
+
+            <Link to="/top-tracks" className="dashboard-item">
+              <div className="dashboard-link">
+                <FaMusic className="dashboard-icon" />
+                <span className="dashboard-text">Top Canciones</span>
+              </div>
+            </Link>
+
+            <Link to="/recently-played" className="dashboard-item">
+              <div className="dashboard-link">
+                <FaHistory className="dashboard-icon" />
+                <span className="dashboard-text">Recien escuchadas</span>
+              </div>
+            </Link>
+
+            <Link to="/create-playlist" className="dashboard-item">
+              <div className="dashboard-link">
+                <FaPlus className="dashboard-icon" />
+                <span className="dashboard-text">
+                  Crear Playlist personalizada
+                </span>
+              </div>
+            </Link>
           </div>
         </div>
-      </div>
       )}
     </>
   );
