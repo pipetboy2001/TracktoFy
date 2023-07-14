@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Login from "./LoginPage";
-import HeaderNav from "./HeaderNav";
+import { Navbar, Nav, Image } from "react-bootstrap";
+import spotifyLogo from "../assets/spotify-logo.svg";
+import Container from 'react-bootstrap/Container';
 
-const Dashboard = () => {
+
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+const HeaderNav = () => {
   const [token, setToken] = useState("");
   const [userData, setUserData] = useState(null);
 
@@ -30,6 +34,7 @@ const Dashboard = () => {
   const logout = () => {
     setToken("");
     window.localStorage.removeItem("token");
+    window.location.reload();
   };
 
   //Funcion para mostrar los datos del usuario
@@ -48,16 +53,39 @@ const Dashboard = () => {
 
   return (
     <>
-      {!token ? (
-        //Si no hay token, se muestra el boton de login
-        <Login />
-      ) : (
-        <HeaderNav/>
-      )}
-
-      
+    <Navbar bg="dark" variant="dark" data-bs-theme="dark">
+      <Container className="d-flex justify-content-between align-items-center">
+        <Navbar.Brand href="#">
+        <Image
+            src={spotifyLogo}
+            alt="Logo de Spotify"
+            className="header-nav__logo ml-2"
+          />
+          <span>Spotify Review</span>
+        </Navbar.Brand>
+        <Nav className="justify-content-center">
+          {userData && (
+            <>
+              <Image
+                src={userData.images[0].url}
+                alt="Foto de perfil"
+                className="header-nav__user-foto mr-2"
+              />
+              <span className="header-nav__user-nombre">
+                {userData.display_name}
+              </span>
+            </>
+          )}
+        </Nav>
+        <Nav>
+          <button className="header-nav__logout-btn" onClick={logout}>
+            Logout
+          </button>
+        </Nav>
+      </Container>
+    </Navbar>
     </>
   );
 };
 
-export default Dashboard;
+export default HeaderNav;

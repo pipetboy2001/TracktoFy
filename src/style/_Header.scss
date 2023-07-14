@@ -1,0 +1,27 @@
+.header-nav {
+    &__logo {
+      margin-right: 10px;
+      width: 30px;
+      height: 30px;
+    }
+    &__user-foto {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    &__user-nombre {
+      margin-right: 10px;
+      color: $color-texto;
+    }
+    &__logout-btn {
+        background-color: $color-primario;
+        border-radius: $radio-bordes;
+        color: $color-texto;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+  }
+  
