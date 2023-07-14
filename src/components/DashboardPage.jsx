@@ -42,6 +42,7 @@ const Dashboard = () => {
 
   return (
     <>
+    <h1>DASHBOARD</h1>
       {/* Si hay token, se muestran 6 opciones*/}
       {userData && (
         <div className="dashboard-container">
