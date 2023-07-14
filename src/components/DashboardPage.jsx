@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaUser, FaMusic, FaListUl,FaHistory, FaPlus } from "react-icons/fa";
 import axios from "axios";
 import Login from "./LoginPage";
 import HeaderNav from "./HeaderNav";
@@ -26,12 +27,6 @@ const Dashboard = () => {
     }
   }, []);
 
-  //Funcion para desahacerse del token
-  const logout = () => {
-    setToken("");
-    window.localStorage.removeItem("token");
-  };
-
   //Funcion para mostrar los datos del usuario
   const getUserData = async (token) => {
     try {
@@ -52,10 +47,41 @@ const Dashboard = () => {
         //Si no hay token, se muestra el boton de login
         <Login />
       ) : (
-        <HeaderNav/>
+        <HeaderNav />
       )}
 
-      
+      {/* Si hay token, se muestran 6 opciones*/}
+
+      {userData && (
+        <div className="dashboard-container">
+        <div className="dashboard-grid">
+          <div className="dashboard-item">
+            <FaUser className="dashboard-icon" />
+             Perfil
+          </div>
+          <div className="dashboard-item">
+            <FaListUl className="dashboard-icon" />
+             Playlist
+          </div>
+          <div className="dashboard-item">
+            <FaMusic className="dashboard-icon" />
+             Tu Top Artistas
+          </div>
+          <div className="dashboard-item">
+            <FaMusic className="dashboard-icon" />
+             Tu Top Canciones
+          </div>
+          <div className="dashboard-item">
+            <FaHistory className="dashboard-icon" />
+             Recien escuchadas
+          </div>
+          <div className="dashboard-item">
+            <FaPlus className="dashboard-icon" />
+            Crear Playlist personalizada
+          </div>
+        </div>
+      </div>
+      )}
     </>
   );
 };

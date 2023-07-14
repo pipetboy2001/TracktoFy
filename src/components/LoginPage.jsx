@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect} from "react";
 import spotifyLogo from "../assets/spotify-logo.svg";
 
 const Login = () => {
@@ -7,9 +6,6 @@ const Login = () => {
   const REDIRECT_URI = "http://localhost:5173/dashboard";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
-
-  const [token, setToken] = useState("");
-  const navigate = useNavigate();
 
   //Se obtiene el token
   useEffect(() => {
@@ -24,7 +20,6 @@ const Login = () => {
       window.location.hash = "";
       window.localStorage.setItem("token", token); //Se guarda el token en el local storage
     }
-    setToken(token);
   }, []);
 
   //Funcion para entrar al autenticador de spotify
@@ -41,12 +36,9 @@ const Login = () => {
         className="login__logo-spotify"
       />
       <h1 className="login__texto-spotify-review">Spotify Review</h1>
-
       <button className="login__boton-inicio-spotify" onClick={handleLogin}>
         Iniciar sesión con Spotify
       </button>
-
-      {token && navigate("/dashboard")}
     </div>
   );
 };

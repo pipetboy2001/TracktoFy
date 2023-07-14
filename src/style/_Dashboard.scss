@@ -1,0 +1,40 @@
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3 columnas
+    grid-gap: 1rem; //espacio
+    max-width: 600px;
+    margin-top: 2rem;
+  }
+  
+  .dashboard-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+  .dashboard-icon {
+    margin-right: 0.5rem; /* Agrega espacio entre el icono y el texto */
+  }
+  
+  /* pantallas pequeñas (hasta 767px) */
+  @media (max-width: 767px) {
+    .dashboard-grid {
+      grid-template-columns: repeat(2, 1fr); // 2 columnas 
+    }
+  }
+  /* Estilos (hasta 480px) */
+  @media (max-width: 480px) {
+    .dashboard-grid {
+      grid-template-columns: 1fr; // 1 columna
+    }
+  }
+  
