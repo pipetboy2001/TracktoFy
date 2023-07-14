@@ -13,25 +13,40 @@ const ProfilePage = () => {
 
   const getUserData = async (token) => {
     try {
-      const { data } = await axios.get("https://api.spotify.com/v1/me", {
+      const response = await axios.get("https://api.spotify.com/v1/me", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      setUserData(data);
+      setUserData(response.data);
     } catch (error) {
       console.log("Error al obtener los datos del usuario:", error);
     }
   };
 
   return (
-    <div>
+    <div className=" profile-container mt-4">
       {userData && (
-        <div>
-          <h1>{userData.display_name}</h1>
+        <div className="profile-card">
+          <img
+            src={userData.images[0].url}
+            alt="Profile"
+            className="profile-image"
+          />
+          <h1 className="profile-name">
+            <a className="profile-name-link" href={userData.external_urls.spotify}>{userData.display_name}</a>
+          </h1>
+          <div className="profile-details">
+            <p className="profile-followers">
+              Seguidores: {userData.followers.total}
+            </p>
+            <p className="profile-country">Pais: {userData.country}</p>
+            <p className="profile-product">Subcripción: {userData.product}</p>
+          </div>
         </div>
       )}
     </div>
+
   );
 };
 

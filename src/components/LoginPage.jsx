@@ -6,6 +6,17 @@ const Login = () => {
   const REDIRECT_URI = "http://localhost:5173/dashboard";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
+  const SCOPES = [
+    "user-read-currently-playing",
+    "user-read-playback-state",
+    "user-read-email",
+    "user-read-private",
+    "user-top-read",
+    "user-read-recently-played",
+    "playlist-read-private",
+    "playlist-read-collaborative",
+    
+  ];
 
   //Se obtiene el token
   useEffect(() => {
@@ -24,7 +35,9 @@ const Login = () => {
 
   //Funcion para entrar al autenticador de spotify
   const handleLogin = () => {
-    const authUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`;
+    const authUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPES.join(
+      "%20"
+    )}&response_type=${RESPONSE_TYPE}&show_dialog=true`;
     window.location.href = authUrl;
   };
 

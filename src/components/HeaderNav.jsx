@@ -55,7 +55,7 @@ const HeaderNav = () => {
     <>
     <Navbar bg="dark" variant="dark" data-bs-theme="dark">
       <Container className="d-flex justify-content-between align-items-center">
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
         <Image
             src={spotifyLogo}
             alt="Logo de Spotify"
