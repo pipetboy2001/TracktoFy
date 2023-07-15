@@ -6,6 +6,7 @@ import Dashboard from "./components/DashboardPage";
 import Perfil from "./components/ProfilePage";
 import TopArtista from "./components/TopArtista";
 import TopMusic from "./components/TopMusic";
+import RecentlyPlayed from "./components/RecienEscuchadas";
 
 function App() {
   const [token, setToken] = useState("");
@@ -40,6 +41,7 @@ function App() {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/top-artists" element={<TopArtista />} />
         <Route path="/top-tracks" element={<TopMusic />} />
+        <Route path="/recently-played" element={<RecentlyPlayed />} />
 
         <Route path="/*" element={<Dashboard />} />
         <Route path="/:temaId" element={<Dashboard />}/>

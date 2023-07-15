@@ -1,0 +1,30 @@
+.recently-played-container {
+    text-align: center;
+  }
+  
+  .recently-played-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .recently-played-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .recently-played-image {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .recently-played-name {
+    margin-top: 0.5rem;
+  }
+  
