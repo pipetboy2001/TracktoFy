@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.top-tracks {
+.top-track {
   margin-top: 2rem;
   text-align: center;
 }
@@ -25,13 +25,14 @@
 }
 
 .time-range-button.active {
-  background-color: #fff;
-  color: #333;
+  background-color: #333;
+  color: $color-texto;
 }
 
 .track-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* Hace que los elementos se ajusten automáticamente según el ancho disponible */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
   grid-gap: 1rem;
   margin-top: 1rem;
 }
@@ -44,12 +45,12 @@
 }
 
 .track-image {
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  height: auto;
+  max-width: 150px;
   object-fit: cover;
   border-radius: 50%;
 }
-
 
 .track-name {
   margin-top: 0.5rem;
