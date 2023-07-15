@@ -5,6 +5,7 @@ import AuthenticationStatus from "./components/ObtenerAuntenticacion";
 import Dashboard from "./components/DashboardPage";
 import Perfil from "./components/ProfilePage";
 import TopArtista from "./components/TopArtista";
+import TopMusic from "./components/TopMusic";
 
 function App() {
   const [token, setToken] = useState("");
@@ -38,6 +39,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/top-artists" element={<TopArtista />} />
+        <Route path="/top-tracks" element={<TopMusic />} />
 
         <Route path="/*" element={<Dashboard />} />
         <Route path="/:temaId" element={<Dashboard />}/>
