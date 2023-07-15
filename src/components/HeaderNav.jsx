@@ -10,6 +10,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 const HeaderNav = () => {
   const [token, setToken] = useState("");
   const [userData, setUserData] = useState(null);
+  const [hideUserName, setHideUserName] = useState(false);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -51,6 +52,23 @@ const HeaderNav = () => {
     }
   };
 
+  // Función para manejar los cambios en el tamaño de la ventana 
+  const handleResize = () => { 
+    if (window.innerWidth <= 768) { 
+      setHideUserName(true); 
+    } else { 
+      setHideUserName(false); 
+    } 
+  }; 
+ 
+  useEffect(() => { 
+    window.addEventListener("resize", handleResize); 
+    handleResize(); // Llama a la función al cargar la página para ajustar la visibilidad inicial del nombre de usuario 
+    return () => { 
+      window.removeEventListener("resize", handleResize); 
+    }; 
+  }, []); 
+
   return (
     <>
     <Navbar bg="dark" variant="dark" data-bs-theme="dark">
@@ -66,6 +84,8 @@ const HeaderNav = () => {
         <Nav className="justify-content-center">
           {userData && (
             <>
+            {!hideUserName && (
+              <>
               <Image
                 src={userData.images[0].url}
                 alt="Foto de perfil"
@@ -75,6 +95,8 @@ const HeaderNav = () => {
                 {userData.display_name}
               </span>
             </>
+          )}
+          </>
           )}
         </Nav>
         <Nav>

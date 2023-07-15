@@ -24,4 +24,9 @@
         cursor: pointer;
     }
   }
+  @media (max-width: 768px) {
+    .header-nav__user-nombre {
+      display: none; // Oculta el nombre de usuario en pantallas más pequeñas
+    }
+  }
   
