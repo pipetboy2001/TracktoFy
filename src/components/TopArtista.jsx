@@ -65,7 +65,7 @@ const TopArtista = () => {
             <div className="time-range-buttons">
               <button
                 className={`time-range-button ${
-                  selectedTimeRange === "short_term" ? "active" : ""
+                  selectedTimeRange === "short_term" ? "" : "inactive" 
                 }`}
                 onClick={() => handleTimeRangeChange("short_term")}
               >
@@ -73,7 +73,7 @@ const TopArtista = () => {
               </button>
               <button
                 className={`time-range-button ${
-                  selectedTimeRange === "medium_term" ? "active" : ""
+                  selectedTimeRange === "medium_term" ? "" : "inactive"
                 }`}
                 onClick={() => handleTimeRangeChange("medium_term")}
               >
@@ -81,7 +81,7 @@ const TopArtista = () => {
               </button>
               <button
                 className={`time-range-button ${
-                  selectedTimeRange === "long_term" ? "active" : ""
+                  selectedTimeRange === "long_term" ? "" : "inactive"
                 }`}
                 onClick={() => handleTimeRangeChange("long_term")}
               >
