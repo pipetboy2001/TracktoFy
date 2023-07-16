@@ -8,6 +8,7 @@ import TopArtista from "./components/TopArtista";
 import TopMusic from "./components/TopMusic";
 import RecentlyPlayed from "./components/RecienEscuchadas";
 import Playlist from "./components/PlaylistPage";
+import PlaylistDetails from "./components/PlaylistDetails";
 
 function App() {
   const [token, setToken] = useState("");
@@ -32,6 +33,9 @@ function App() {
     window.localStorage.removeItem("token");
   };
 
+  // Obtén el playlistId de la URL
+  const playlistId = location.pathname.split("/")[2]; 
+
   return (
     <Router>
       {/*Login o navbar*/}
@@ -44,9 +48,8 @@ function App() {
         <Route path="/top-tracks" element={<TopMusic />} />
         <Route path="/recently-played" element={<RecentlyPlayed />} />
         <Route path="/playlist" element={<Playlist />} />
-
+        <Route path="/playlist/:playlistId" element={<PlaylistDetails playlistId={playlistId} />} />
         <Route path="/*" element={<Dashboard />} />
-        <Route path="/:temaId" element={<Dashboard />}/>
         <Route path="*" element={<Dashboard />} />
       </Routes>
     </Router>
