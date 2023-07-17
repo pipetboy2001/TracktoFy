@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./style/index.scss";
 import AuthenticationStatus from "./components/ObtenerAuntenticacion";
 import Dashboard from "./components/DashboardPage";
@@ -12,6 +13,8 @@ import PlaylistDetails from "./components/PlaylistDetails";
 
 function App() {
   const [token, setToken] = useState("");
+  const params = useParams();
+
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -33,8 +36,6 @@ function App() {
     window.localStorage.removeItem("token");
   };
 
-  // Obtén el playlistId de la URL
-  const playlistId = location.pathname.split("/")[2]; 
 
   return (
     <Router>
@@ -48,7 +49,7 @@ function App() {
         <Route path="/top-tracks" element={<TopMusic />} />
         <Route path="/recently-played" element={<RecentlyPlayed />} />
         <Route path="/playlist" element={<Playlist />} />
-        <Route path="/playlist/:playlistId" element={<PlaylistDetails playlistId={playlistId} />} />
+        <Route path="/playlist/:playlistId" element={<PlaylistDetails playlistId={params.playlistId} />} />
         <Route path="/*" element={<Dashboard />} />
         <Route path="*" element={<Dashboard />} />
       </Routes>

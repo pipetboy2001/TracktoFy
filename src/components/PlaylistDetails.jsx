@@ -1,10 +1,14 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const PlaylistDetails = ({ playlistId }) => {
+const PlaylistDetails = () => {
   const [playlist, setPlaylist] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const params = useParams();
+    const playlistId = params.playlistId;
+
 
   useEffect(() => {
     const token = window.localStorage.getItem("token");
@@ -40,6 +44,8 @@ const PlaylistDetails = ({ playlistId }) => {
   if (!playlist) {
     return <p>No se encontró la playlist {playlistId} </p>;
   }
+
+  console.log(playlist);
 
   return (
     <div className="playlist-details">
