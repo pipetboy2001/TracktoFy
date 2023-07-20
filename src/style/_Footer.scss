@@ -1,0 +1,22 @@
+.footer {
+    background-color: #262626b0;
+    margin-top: 5%;
+    padding: 5% 0;
+    text-align: center;
+  }
+  
+  .footer__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer__github-icon {
+    margin-right: 5px;
+  }
+
+  .footer__link {
+    color: #fff;
+    text-decoration: none;
+  }
+  

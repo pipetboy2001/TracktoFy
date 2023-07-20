@@ -11,6 +11,7 @@ import RecentlyPlayed from "./components/RecienEscuchadas";
 import Playlist from "./components/PlaylistPage";
 import PlaylistDetails from "./components/PlaylistDetails";
 import SubirArriba from "./components/SubirArriba";
+import Footer from "./components/FooterPage";
 
 function App() {
   const [token, setToken] = useState("");
@@ -55,6 +56,7 @@ function App() {
         <Route path="*" element={<Dashboard />} />
       </Routes>
       <SubirArriba />
+      <Footer />
     </Router>
   );
 }
