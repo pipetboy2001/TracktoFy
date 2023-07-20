@@ -10,6 +10,7 @@ import TopMusic from "./components/TopMusic";
 import RecentlyPlayed from "./components/RecienEscuchadas";
 import Playlist from "./components/PlaylistPage";
 import PlaylistDetails from "./components/PlaylistDetails";
+import SubirArriba from "./components/SubirArriba";
 
 function App() {
   const [token, setToken] = useState("");
@@ -53,6 +54,7 @@ function App() {
         <Route path="/*" element={<Dashboard />} />
         <Route path="*" element={<Dashboard />} />
       </Routes>
+      <SubirArriba />
     </Router>
   );
 }
