@@ -10,6 +10,7 @@ import TopMusic from "./components/TopMusic";
 import RecentlyPlayed from "./components/RecienEscuchadas";
 import Playlist from "./components/PlaylistPage";
 import PlaylistDetails from "./components/PlaylistDetails";
+import TopGenero from "./components/TopGenero";
 import SubirArriba from "./components/SubirArriba";
 import Footer from "./components/FooterPage";
 
@@ -50,6 +51,7 @@ function App() {
         <Route path="/top-artists" element={<TopArtista />} />
         <Route path="/top-tracks" element={<TopMusic />} />
         <Route path="/recently-played" element={<RecentlyPlayed />} />
+        <Route path="/top-genres" element={<TopGenero />} />
         <Route path="/playlist" element={<Playlist />} />
         <Route path="/playlist/:playlistId" element={<PlaylistDetails playlistId={params.playlistId} />} />
         <Route path="/*" element={<Dashboard />} />

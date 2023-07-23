@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaUser, FaMusic, FaListUl, FaHistory, FaPlus } from "react-icons/fa";
+import { FaUser, FaMusic, FaListUl, FaHistory,FaHeadphones } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -81,11 +81,11 @@ const Dashboard = () => {
               </div>
             </Link>
 
-            <Link to="/create-playlist" className="dashboard-item">
+            <Link to="/top-genres" className="dashboard-item">
               <div className="dashboard-link">
-                <FaPlus className="dashboard-icon" />
+                <FaHeadphones className="dashboard-icon" />
                 <span className="dashboard-text">
-                  Crear Playlist personalizada
+                  Top Generos
                 </span>
               </div>
             </Link>
