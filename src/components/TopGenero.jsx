@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { FaArrowRight } from "react-icons/fa";
+import { BsMusicNoteList } from "react-icons/bs";
 
 const ProfilePage = () => {
   const [topGenres, setTopGenres] = useState([]);
@@ -61,6 +63,12 @@ const ProfilePage = () => {
     setSelectedTimeRange(timeRange);
   };
 
+  const getPlaylistUrl = (genre) => {
+    // Obtiene la URL de la lista de reproducción de Spotify para el género especificado
+    const playlistUrl = `https://open.spotify.com/search/the%20sound%20of%20${genre}`;
+    return playlistUrl;
+  };
+
   return (
     <div className="container mt-4">
       <div className="profile-container">
@@ -94,9 +102,20 @@ const ProfilePage = () => {
           </div>
           <div className="genres-list">
             {topGenres.length > 0 && (
-              <ul className="">
+              <ul>
                 {topGenres.map((genre, index) => (
-                  <li key={index}>{genre}</li>
+                  <li key={index} className="genres-list__item" href={getPlaylistUrl(genre)}>
+                  {index + 1}.-  {/*//para mostrar el numero de genero */}
+                   {genre}
+                    <a
+                      href={getPlaylistUrl(genre)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="genres-list__item__playlist-link genres-list__item__playlist-link--with-icon"
+                    >
+                      <FaArrowRight />
+                    </a>
+                  </li>
                 ))}
               </ul>
             )}

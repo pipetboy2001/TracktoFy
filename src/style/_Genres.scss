@@ -1,0 +1,38 @@
+.genres-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 500px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 200px; 
+
+    &:hover {
+        background-color: #666;
+    }
+
+    &__playlist-link {
+      display: flex;
+      align-items: center;
+      color: white;
+      margin-left: auto;
+      text-decoration: none;
+
+      
+      &--with-icon {
+        svg {
+          margin-left: 5px; 
+        }
+      }
+    }
+  }
+}
