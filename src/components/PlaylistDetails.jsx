@@ -44,6 +44,9 @@ const PlaylistDetails = () => {
   if (!playlist) {
     return <p>No se encontró la playlist {playlistId} </p>;
   }
+  const IrACancion = (trackId) => {
+    window.open(`https://open.spotify.com/track/${trackId}`, "_blank");
+  };
 
   console.log(playlist);
 
@@ -63,7 +66,7 @@ const PlaylistDetails = () => {
       <ul className="song-list">
         {/* // Mapea las canciones de la playlist */}
         {playlist.tracks.items.map((item) => (
-          <li key={item.track.id} className="song-item">
+          <li key={item.track.id} className="song-item" onClick={() => IrACancion(item.track.id)}>
             <img
               src={item.track.album.images[0]?.url} // Obtén la URL de la imagen de la canción
               alt="Song Cover"
