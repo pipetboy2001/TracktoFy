@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaArrowRight } from "react-icons/fa";
-import { BsMusicNoteList } from "react-icons/bs";
 
 const ProfilePage = () => {
   const [topGenres, setTopGenres] = useState([]);

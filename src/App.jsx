@@ -34,16 +34,11 @@ function App() {
     setToken(token);
   }, []);
 
-  const logout = () => {
-    setToken("");
-    window.localStorage.removeItem("token");
-  };
-
 
   return (
     <Router>
       {/*Login o navbar*/}
-      <AuthenticationStatus token={token} logout={logout} /> 
+      <AuthenticationStatus token={token} /> 
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />

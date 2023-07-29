@@ -5,8 +5,6 @@ import spotifyLogo from "../assets/spotify-logo.svg";
 import Container from 'react-bootstrap/Container';
 
 
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
 const HeaderNav = () => {
   const [token, setToken] = useState("");
   const [userData, setUserData] = useState(null);
