@@ -77,7 +77,7 @@ const HeaderNav = () => {
             alt="Logo de Spotify"
             className="header-nav__logo ml-2"
           />
-          <span>Spotify Review</span>
+          <span>TracktoFy</span>
         </Navbar.Brand>
         <Nav className="justify-content-center">
           {userData && (

@@ -29,7 +29,7 @@ const ProfilePage = () => {
       {userData && (
         <div className="profile-card">
           <img
-            src={userData.images[0].url}
+            src={userData.images[1].url}
             alt="Profile"
             className="profile-image"
           />

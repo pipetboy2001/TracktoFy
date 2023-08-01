@@ -50,7 +50,7 @@ const Login = () => {
         alt="Logo de Spotify"
         className="login__logo-spotify"
       />
-      <h1 className="login__texto-spotify-review">Spotify Review</h1>
+      <h1 className="login__texto-spotify-review">TracktoFy</h1>
       <button className="login__boton-inicio-spotify" onClick={handleLogin}>
         Iniciar sesión con Spotify
       </button>
